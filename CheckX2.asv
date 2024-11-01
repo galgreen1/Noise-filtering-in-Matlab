@@ -1,0 +1,19 @@
+function [Ak,k] = CheckX2()
+% n= -50:49 ;
+% x2 = zeros(size(n));
+% k1=28:76;
+n= 0:99 ;
+x2 = zeros(size(n));
+k1=0:24;
+K2=76:100
+x2(k1)=1;
+x2(k2)=1;
+[Ak,k]=FourierCoeffGen(x2,n,100);
+x = FourierSum(Ak,k,100);
+stem(n,x);
+xlabel('n') ;
+ylabel('x2_restored');
+title('X2');
+legend('x2');
+
+end
